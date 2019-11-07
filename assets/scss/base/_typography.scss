@@ -1,0 +1,89 @@
+$font__primary: 'Roboto', sans-serif;
+$font__secondary: 'Merriweather', serif;
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: $font__primary;
+	line-height: 1.8;
+	margin-bottom: 18px;
+	margin-top: 0;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 36px;
+	}
+}
+
+h1,
+.h1 {
+	font-size: 48px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 90px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 30px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 36px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 24px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 30px;
+	}
+}
+
+h4,
+.h4 {
+	font-size: 21px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 24px;
+	}
+}
+
+h5,
+.h5 {
+	font-size: 18px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 21px;
+	}
+}
+
+h6,
+.h6 {
+	font-size: 16px;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 18px;
+	}
+}
+
+p,
+li {
+	font-family: $font__secondary;
+	font-size: 16px;
+	line-height: 1.6;
+
+	@include grid-media($medium-screen-grid) {
+		font-size: 18px;
+	}
+}
