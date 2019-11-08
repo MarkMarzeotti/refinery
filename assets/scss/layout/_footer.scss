@@ -1,6 +1,8 @@
 .footer {
 	background-color: $color__shark;
 	padding: 30px 20px;
+	position: relative;
+	z-index: 70;
 
 	@include grid-media( $medium-screen-grid ) {
 		display: flex;
@@ -55,6 +57,7 @@
 
 		li {
 			display: flex;
+			margin: 0;
 		}
 
 		a {
@@ -77,6 +80,10 @@
 			flex-basis: 40%;
 			padding: 0 5px 0 0;
 			width: auto;
+		}
+
+		li {
+			margin: 0;
 		}
 
 		a {

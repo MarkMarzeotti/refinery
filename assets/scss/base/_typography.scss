@@ -16,48 +16,32 @@ h6,
 .h6 {
 	font-family: $font__montserrat;
 	line-height: 1.8;
-	margin-bottom: 18px;
-	margin-top: 0;
-
-	@include grid-media($medium-screen-grid) {
-		margin-bottom: 36px;
-	}
+	margin-bottom: 20px;
+	margin-top: 10px;
 }
 
 h1,
 .h1 {
-	font-size: 48px;
-
-	@include grid-media($medium-screen-grid) {
-		font-size: 90px;
-	}
+	font-size: 52px;
+    line-height: 56px;
 }
 
 h2,
 .h2 {
-	font-size: 30px;
-
-	@include grid-media($medium-screen-grid) {
-		font-size: 36px;
-	}
+	font-size: 32px;
+    line-height: 38px;
 }
 
 h3,
 .h3 {
-	font-size: 24px;
-
-	@include grid-media($medium-screen-grid) {
-		font-size: 30px;
-	}
+	font-size: 32px;
+    line-height: 38px;
 }
 
 h4,
 .h4 {
-	font-size: 21px;
-
-	@include grid-media($medium-screen-grid) {
-		font-size: 24px;
-	}
+	font-size: 20px;
+    line-height: 38px;
 }
 
 h5,
@@ -83,6 +67,8 @@ li {
 	font-family: $font__open-sans;
 	font-size: 16px;
 	line-height: 1.6;
+	margin-bottom: 20px;
+	margin-top: 10px;
 
 	@include grid-media($medium-screen-grid) {
 		font-size: 18px;

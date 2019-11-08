@@ -1,0 +1,46 @@
+.hero {
+	padding: 40px 0;
+	position: relative;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 40px;
+		padding: 140px 0 10%;
+	}
+
+	&__content {
+		@include grid-column(4);
+		position: relative;
+		z-index: 2;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(6);
+		}
+	}
+
+	&__image {
+		display: none;
+
+		@include grid-media($medium-screen-grid) {
+			@include position(absolute, 0 0 null null);
+			display: block;
+			width: 55%;
+			z-index: 1;
+		}
+
+		&::before {
+
+			@include grid-media($medium-screen-grid) {
+				@include position(absolute, 0 50% -15% -85%);
+				background-image: url(../../assets/img/background-graphic-1.svg);
+				background-position: bottom;
+				background-size: cover;
+				content: '';
+				z-index: 0;
+			}
+		}
+
+		img {
+			clip-path: ellipse(110% 110% at 110% -10%);
+		}
+	}
+}

@@ -37,7 +37,8 @@ function trht_setup() {
 	add_theme_support( 'post-thumbnails' );
 	// additional image sizes.
 	add_image_size( 'logo', 600, 120 ); // 600px max width, 120px max height
-	add_image_size( 'social_logo', 120, 60 ); // 120px max width, 60px max height
+	add_image_size( 'social-logo', 120, 60 ); // 120px max width, 60px max height
+	add_image_size( 'hero-image', 820, 660, true ); // 820px width, 660px height, cropped
 
 	/*
 	 * Register menu locations.
@@ -162,3 +163,8 @@ require get_template_directory() . '/inc/template-functions.php';
  * A custom walker class to modify the navigation markup.
  */
 require get_template_directory() . '/inc/class-trht-walker-nav-menu.php';
+
+/**
+ * Advanced Custom Fields Blocks.
+ */
+require get_template_directory() . '/inc/acf-blocks.php';

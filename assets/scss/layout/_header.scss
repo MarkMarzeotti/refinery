@@ -1,4 +1,5 @@
 .header {
+	background-color: $color__white;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -9,6 +10,7 @@
 		flex-flow: row wrap;
 		max-width: 50%;
 		padding: 30px 20px;
+		z-index: 90;
 
 		@include grid-media($medium-screen-grid) {
 			height: 90px;

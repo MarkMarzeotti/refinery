@@ -15,8 +15,7 @@ input[type=button],
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 1;
-	margin-bottom: 20px;
-	margin-right: 40px;
+	margin: 10px 40px 20px 0;
 	opacity: 1;
 	padding: 11px 28px 9px;
 	position: relative;
@@ -43,7 +42,13 @@ input[type=button],
 	}
 }
 
-.btn--outline {
+.btn--outline,
+.btn--outline:visited {
 	@extend .btn;
 	background-color: transparent;
+
+	&:hover {
+		background-color: $color__atlantis;
+		border-color: $color__atlantis;
+	}
 }

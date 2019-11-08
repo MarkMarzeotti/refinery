@@ -10,20 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="post__item">
-	<header>
-		<?php the_title( '<h1>', '</h1>' ); ?>
-	</header>
-
 	<div class="post__content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div>' . esc_html__( 'Pages:', 'refinery-test' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+		<?php the_content(); ?>
 	</div>
 </article>
