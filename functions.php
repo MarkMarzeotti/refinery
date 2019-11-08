@@ -86,12 +86,12 @@ add_action( 'after_setup_theme', 'trht_setup' );
  * Enqueue scripts and styles.
  */
 function trht_scripts() {
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto:400,400i,700,700i', array(), '1' );
-	wp_enqueue_style( 'marzeotti-base-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_script( 'marzeotti-base-script', get_stylesheet_directory_uri() . '/dist/js/app.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Encode+Sans:400,600|Montserrat:400,700|Open+Sans:400,700', array(), '1' );
+	wp_enqueue_style( 'trht-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_script( 'trht-script', get_stylesheet_directory_uri() . '/dist/js/app.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 	wp_localize_script(
-		'marzeotti-base-script',
-		'marzeottiBaseGlobal',
+		'trht-script',
+		'trhtGlobal',
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 			'nonce'   => wp_create_nonce( 'trht_more_post_ajax_nonce' ),

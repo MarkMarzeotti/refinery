@@ -1,5 +1,6 @@
-$font__primary: 'Roboto', sans-serif;
-$font__secondary: 'Merriweather', serif;
+$font__open-sans: 'Open Sans', sans-serif;
+$font__montserrat: 'Montserrat', sans-serif;
+$font__encode-sans: 'Encode Sans', sans-serif;
 
 h1,
 .h1,
@@ -13,7 +14,7 @@ h5,
 .h5,
 h6,
 .h6 {
-	font-family: $font__primary;
+	font-family: $font__montserrat;
 	line-height: 1.8;
 	margin-bottom: 18px;
 	margin-top: 0;
@@ -79,7 +80,7 @@ h6,
 
 p,
 li {
-	font-family: $font__secondary;
+	font-family: $font__open-sans;
 	font-size: 16px;
 	line-height: 1.6;
 

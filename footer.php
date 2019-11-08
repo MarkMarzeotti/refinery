@@ -17,7 +17,7 @@
 		<div class="footer__logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php
-				$trht_logo_id = get_field( 'dark_logo', 'option' );
+				$trht_logo_id = get_field( 'light_logo', 'option' );
 				if ( ! empty( $trht_logo_id ) ) :
 					$trht_logo = wp_get_attachment_image_src( $trht_logo_id, 'logo' );
 					?>

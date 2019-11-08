@@ -1,18 +1,19 @@
 .header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
 
 	&__logo {
-		@include grid-column(2);
 
 		@include grid-media($medium-screen-grid) {
-			@include grid-column(6);
+			padding: 20px 30px;
 		}
 	}
 
 	&__nav {
-		@include grid-column(2);
 
 		@include grid-media($medium-screen-grid) {
-			@include grid-column(6);
+			padding: 0 30px;
 		}
 	}
 }

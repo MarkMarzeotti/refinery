@@ -1,3 +1,8 @@
+body * {
+	box-sizing: border-box;
+	font-family: $font__open-sans;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: 1200px;
@@ -32,7 +37,7 @@
 		clip-path: none;
 		color: $color__black;
 		display: block;
-		font-family: $font__secondary;
+		font-family: $font__open-sans;
 		font-size: 1em;
 		height: auto;
 		left: 5px;

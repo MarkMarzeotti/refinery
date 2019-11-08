@@ -1,5 +1,62 @@
 .nav {
 
+	@include grid-media($medium-screen-grid) {
+		display: flex;
+		flex-flow: row wrap;
+		margin-left: 25px;
+	}
+
+	&__button {
+
+		@include grid-media($medium-screen-grid) {
+			display: none;
+		}
+	}
+
+	&__level {
+		display: flex;
+	}
+
+	&__item {
+
+		@include grid-media($medium-screen-grid) {
+			align-self: flex-end;
+			display: flex;
+		}
+
+		a {
+			color: $color__shark;
+			font-family: $font__encode-sans;
+			font-size: 14px;
+			font-weight: 600;
+			letter-spacing: 1px;
+			text-decoration: none;
+			text-transform: lowercase;
+
+			@include grid-media($medium-screen-grid) {
+				padding: 30px 25px;
+			}
+		}
+	}
+
 	&.toggled {
+	}
+
+	.button-menu {
+
+		li {
+
+			@include grid-media($medium-screen-grid) {
+				align-self: center;
+			}
+		}
+
+		a {
+			@extend .btn--outline;
+
+			@include grid-media($medium-screen-grid) {
+				margin: 6px 0 0 25px;
+			}
+		}
 	}
 }
