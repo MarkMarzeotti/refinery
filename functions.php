@@ -35,7 +35,7 @@ function trht_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	// additional image sizes
+	// additional image sizes.
 	add_image_size( 'logo', 600, 120 ); // 600px max width, 120px max height
 	add_image_size( 'social_logo', 120, 60 ); // 120px max width, 60px max height
 

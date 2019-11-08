@@ -30,11 +30,12 @@
 				if ( ! empty( $trht_logo_id ) ) :
 					$trht_logo = wp_get_attachment_image_src( $trht_logo_id, 'logo' );
 					?>
-					<img src="<?php echo esc_url( $trht_logo[ 0 ] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
+					<img src="<?php echo esc_url( $trht_logo[0] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
 					<?php
 				else :
 					bloginfo( 'name' );
-				endif; ?>
+				endif;
+				?>
 			</a>
 		</div>
 

@@ -21,11 +21,12 @@
 				if ( ! empty( $trht_logo_id ) ) :
 					$trht_logo = wp_get_attachment_image_src( $trht_logo_id, 'logo' );
 					?>
-					<img src="<?php echo esc_url( $trht_logo[ 0 ] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
+					<img src="<?php echo esc_url( $trht_logo[0] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
 					<?php
 				else :
 					bloginfo( 'name' );
-				endif; ?>
+				endif;
+				?>
 			</a>
 		</div>
 
@@ -37,11 +38,11 @@
 					while ( have_rows( 'social_media_links', 'option' ) ) :
 						the_row();
 						$trht_social_logo_id = get_sub_field( 'logo' );
-						$trht_social_logo = wp_get_attachment_image( $trht_social_logo_id, 'social_logo' );
+						$trht_social_logo    = wp_get_attachment_image( $trht_social_logo_id, 'social_logo' );
 						?>
 						<li>
 							<a href="<?php the_sub_field( 'link' ); ?>" target="_blank" rel="noopener">
-								<?php echo $trht_social_logo; ?>
+								<?php echo wp_kses( $trht_social_logo, 'post' ); ?>
 							</a>
 						</li>
 					<?php endwhile; ?>
