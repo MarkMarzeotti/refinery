@@ -4,13 +4,13 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Marzeotti_Base
+ * @package Refinery
  */
 
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-function marz_posted_on() {
+function trht_posted_on() {
 	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf(
@@ -21,7 +21,7 @@ function marz_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'marzeotti-base' ),
+		esc_html_x( 'Posted on %s', 'post date', 'refinery-test' ),
 		$time_string
 	);
 
@@ -36,7 +36,7 @@ function marz_posted_on() {
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Updated on %s', 'post date', 'marzeotti-base' ),
+			esc_html_x( 'Updated on %s', 'post date', 'refinery-test' ),
 			$time_string
 		);
 	}
@@ -48,10 +48,10 @@ function marz_posted_on() {
 /**
  * Prints HTML with meta information for the current author.
  */
-function marz_posted_by() {
+function trht_posted_by() {
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( 'by %s', 'post author', 'marzeotti-base' ),
+		esc_html_x( 'by %s', 'post author', 'refinery-test' ),
 		'<span class="author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

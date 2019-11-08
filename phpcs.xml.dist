@@ -61,7 +61,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="marzeotti-base"/>
+			<property name="text_domain" type="array" value="refinery-test"/>
 		</properties>
 	</rule>
 
@@ -93,7 +93,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="marz" />
+			<property name="prefixes" type="array" value="trht" />
 		</properties>
 	</rule>
 

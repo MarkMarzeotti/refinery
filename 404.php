@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Marzeotti_Base
+ * @package Refinery
  */
 
 get_header();
@@ -14,11 +14,11 @@ get_header();
 
 		<section>
 			<header>
-				<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'marzeotti-base' ); ?></h1>
+				<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'refinery-test' ); ?></h1>
 			</header>
 
 			<div>
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'marzeotti-base' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'refinery-test' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
 		</section>
