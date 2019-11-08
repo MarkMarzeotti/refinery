@@ -29,8 +29,27 @@
 			</a>
 		</div>
 
-		<div class="footer__social">
-		</div>
+		<?php if ( have_rows( 'social_media_links', 'option' ) ) : ?>
+			<div class="footer__social">
+				<ul>
+
+					<?php
+					while ( have_rows( 'social_media_links', 'option' ) ) :
+						the_row();
+						$trht_social_logo_id = get_sub_field( 'logo' );
+						$trht_social_logo = wp_get_attachment_image( $trht_social_logo_id, 'social_logo' );
+						?>
+						<li>
+							<a href="<?php the_sub_field( 'link' ); ?>" target="_blank" rel="noopener">
+								<?php echo $trht_social_logo; ?>
+							</a>
+						</li>
+					<?php endwhile; ?>
+
+				</ul>
+			</div>
+		<?php endif; ?>
+
 
 		<?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 			<nav class="footer__nav nav">
