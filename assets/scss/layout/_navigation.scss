@@ -3,43 +3,124 @@
 	@include grid-media($medium-screen-grid) {
 		display: flex;
 		flex-flow: row wrap;
-		margin-left: 25px;
 	}
 
 	&__button {
+		appearance: none;
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		padding: 35px 30px 30px;
+		position: relative;
+		z-index: 60;
 
 		@include grid-media($medium-screen-grid) {
 			display: none;
+		}
+
+		&:hover {
+
+			.hamburger {
+
+				&__top,
+				&__middle,
+				&__bottom {
+					width: 34px;
+				}
+			}
+		}
+	}
+
+	&__container {
+		@include position(fixed, 0 null 0 100%);
+		background-color: $color__white;
+		overflow: scroll;
+		padding: 130px 40px 40px;
+		transition: left 300ms ease;
+		width: 100vw;
+		z-index: 50;
+
+		@include grid-media($medium-screen-grid) {
+			@include position(relative, auto null auto auto);
+			background-color: transparent;
+			display: flex;
+			padding: 0;
+			width: auto;
 		}
 	}
 
 	&__level {
 		display: flex;
+		flex-flow: row wrap;
+		margin-bottom: 20px;
+		width: 100%;
+
+		@include grid-media($medium-screen-grid) {
+			margin-bottom: 0;
+			width: auto;
+		}
 	}
 
 	&__item {
+		display: block;
+		width: 100%;
 
 		@include grid-media($medium-screen-grid) {
 			align-self: flex-end;
 			display: flex;
+			width: auto;
 		}
 
 		a {
 			color: $color__shark;
+			display: block;
 			font-family: $font__encode-sans;
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 600;
 			letter-spacing: 1px;
+			padding: 10px 0;
 			text-decoration: none;
 			text-transform: lowercase;
+			width: 100%;
 
 			@include grid-media($medium-screen-grid) {
+				font-size: 14px;
 				padding: 30px 25px;
 			}
 		}
 	}
 
 	&.toggled {
+
+		.nav__button {
+
+			.hamburger {
+
+				&__top,
+				&__middle,
+				&__bottom {
+					width: 34px;
+				}
+
+				&__top {
+					top: 13px;
+					transform: rotate(45deg);
+				}
+
+				&__middle {
+					opacity: 0;
+				}
+
+				&__bottom {
+					top: 13px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		.nav__container {
+			left: 0;
+		}
 	}
 
 	.button-menu {
@@ -53,10 +134,53 @@
 
 		a {
 			@extend .btn--outline;
+			width: auto;
 
 			@include grid-media($medium-screen-grid) {
 				margin: 6px 0 0 25px;
 			}
 		}
+	}
+}
+
+.hamburger {
+	display: block;
+	height: 30px;
+	position: relative;
+	width: 34px;
+
+	&__top,
+	&__middle,
+	&__bottom {
+		background-color: $color__atlantis;
+		border-radius: 6px;
+		box-sizing: content-box;
+		display: block;
+		height: 4px;
+		left: 0;
+		position: absolute;
+		width: 34px;
+	}
+
+	&__top {
+		top: 3px;
+		transition: left 300ms ease,
+			top 300ms ease,
+			transform 300ms ease,
+			width 300ms ease;
+	}
+
+	&__middle {
+		opacity: 1;
+		top: 13px;
+		transition: opacity 300ms ease;
+	}
+
+	&__bottom {
+		top: 23px;
+		transition: left 300ms ease,
+			top 300ms ease,
+			transform 300ms ease,
+			width 300ms ease;
 	}
 }
