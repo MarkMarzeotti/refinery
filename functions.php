@@ -39,6 +39,7 @@ function trht_setup() {
 	add_image_size( 'logo', 600, 120 ); // 600px max width, 120px max height
 	add_image_size( 'social-logo', 120, 60 ); // 120px max width, 60px max height
 	add_image_size( 'hero-image', 820, 660, true ); // 820px width, 660px height, cropped
+	add_image_size( 'content-image', 470, 380 ); // 470px max width, 380px max height
 
 	/*
 	 * Register menu locations.
@@ -52,11 +53,6 @@ function trht_setup() {
 			'footer-menu'  => esc_html__( 'Footer Menu', 'refinery-test' ),
 		)
 	);
-
-	/**
-	 * Add support for wide and full width blocks.
-	 */
-	add_theme_support( 'align-wide' );
 
 	/**
 	 * Add a custom color pallete

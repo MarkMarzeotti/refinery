@@ -1,1 +1,32 @@
+.image-content {
+	margin-bottom: 20px;
 
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 140px;
+	}
+
+	&__image {
+		@include grid-column(4);
+		margin-bottom: 30px;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(5);
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__content {
+		@include grid-column(4);
+		margin-bottom: 30px;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(6.5);
+			@include grid-shift(.5);
+			margin-bottom: 0;
+		}
+	}
+}
