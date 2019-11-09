@@ -1,0 +1,63 @@
+.backpage-hero {
+	padding: 40px 0;
+	position: relative;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 70px;
+		padding: 140px 0 10%;
+	}
+
+	&::before {
+
+		@include grid-media($medium-screen-grid) {
+			@include position(absolute, 0 0 -200px 0);
+			background-image: url(../../assets/img/background-graphic-1.svg);
+			background-position: bottom;
+			background-size: cover;
+			content: '';
+			z-index: 0;
+		}
+	}
+
+	&__content {
+		@include grid-column(4);
+		position: relative;
+		z-index: 10;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(6);
+		}
+
+		.h1 {
+			font-size: 40px;
+			line-height: 48px;
+			margin-bottom: 30px;
+		}
+
+		.h6 {
+			border-bottom: 3px solid $color__atlantis;
+			color: $color__atlantis;
+			display: inline-block;
+			letter-spacing: 1px;
+			margin-bottom: 20px;
+			padding-bottom: 4px;
+			text-transform: uppercase;
+		}
+	}
+
+	&__image {
+		@include grid-column(4);
+		display: none;
+		position: relative;
+		z-index: 10;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(6);
+			display: block;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}

@@ -21,7 +21,7 @@
 .post {
 
 	&__content {
-		> *:first-child:not(.hero) {
+		> *:first-child:not(.hero):not(.backpage-hero) {
 			margin-top: 40px;
 
 			@include grid-media($medium-screen-grid) {

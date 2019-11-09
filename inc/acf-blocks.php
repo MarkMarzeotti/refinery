@@ -38,6 +38,18 @@ function trht_define_acf_blocks() {
 
 		acf_register_block(
 			array(
+				'name'              => 'backpage-hero',
+				'title'             => __( 'Backpage Hero' ),
+				'description'       => __( 'A hero block with content and image.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'hero', 'page' ),
+			)
+		);
+
+		acf_register_block(
+			array(
 				'name'              => 'image-content',
 				'title'             => __( 'Image and Content' ),
 				'description'       => __( 'A block displaying an image and some content.' ),
