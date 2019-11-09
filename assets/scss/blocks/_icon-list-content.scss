@@ -12,6 +12,7 @@
 		@include grid-media($medium-screen-grid) {
 			@include grid-column(5.5);
 			margin-bottom: 0;
+			margin-top: 10px;
 		}
 	}
 
@@ -24,7 +25,7 @@
 	&__icon {
 		background-color: $color__atlantis;
 		border-radius: 25px;
-		box-shadow: 0px 0px 20px 3px rgba(203,215,254,0.3);
+		box-shadow: 0px 0px 20px 3px rgba(243, 246, 250, 1);
 		float: left;
 		height: 50px;
 		margin-right: 20px;

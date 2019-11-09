@@ -1,0 +1,137 @@
+.number-columns {
+	margin-bottom: 20px;
+	position: relative;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 100px;
+	}
+
+	&::before {
+
+		@include grid-media($medium-screen-grid) {
+			@include position(absolute, 0 0 -60px 80%);
+			background-image: url(../../assets/img/background-graphic-2.svg);
+			background-position: right;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			margin: auto 0;
+			min-width: 400px;
+		}
+	}
+
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		position: relative;
+	}
+
+	&__intro {
+		@include grid-column(4);
+		margin-bottom: 20px;
+		position: relative;
+		text-align: center;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(12);
+		}
+	}
+
+	&__item {
+		@include grid-column(4);
+		background-color: $color__white;
+		border-radius: 25px;
+		box-shadow: 0px 0px 30px 6px rgba(243, 246, 250, 1);
+		margin-bottom: 40px;
+		padding: 30px 25px;
+		position: relative;
+		text-align: center;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(4);
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-size: 20px;
+			line-height: 38px;
+			margin-bottom: 10px;
+		}
+
+		&::before,
+		&::after {
+			background-color: $color__atlantis;
+			content: '';
+			height: 40px;
+			margin: 0 auto;
+			width: 2px;
+			z-index: 50;
+
+			@include grid-media($medium-screen-grid) {
+				height: 2px;
+				margin: auto 0;
+				width: 40px;
+			}
+		}
+
+		&::before {
+			@include position(absolute, null 0 100% 0);
+
+			@include grid-media($medium-screen-grid) {
+				@include position(absolute, 0 100% 0 auto);
+			}
+		}
+
+		&::after {
+			@include position(absolute, 100% 0 null 0);
+
+			@include grid-media($medium-screen-grid) {
+				@include position(absolute, 0 auto 0 100%);
+			}
+		}
+
+		&:nth-child(3n+2) {
+
+			&::before {
+				content: none;
+			}
+		}
+
+		&:nth-child(3n+1) {
+
+			&::after {
+
+				@include grid-media($medium-screen-grid) {
+					content: none;
+				}
+			}
+		}
+
+		&:first-child {
+
+			&::before {
+				content: none;
+			}
+		}
+
+		&:last-child {
+
+			&::after {
+				content: none;
+			}
+		}
+	}
+
+	&__count {
+		color: $color__atlantis;
+		font-family: $font__montserrat;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 46px;
+		margin-bottom: 10px;
+	}
+}

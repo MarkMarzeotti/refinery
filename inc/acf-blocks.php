@@ -59,6 +59,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'list', 'icon', 'content' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'number-columns',
+				'title'             => __( 'Number Columns' ),
+				'description'       => __( 'A block displaying numbered columns of content.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'columns', 'numbered', 'process' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );
