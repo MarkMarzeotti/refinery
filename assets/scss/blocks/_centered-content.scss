@@ -1,0 +1,17 @@
+.centered-content {
+	margin-bottom: 60px;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 100px;
+	}
+
+	&__content {
+		@include grid-column(4);
+		text-align: center;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(7.5);
+			@include grid-shift(2.25);
+		}
+	}
+}

@@ -98,6 +98,30 @@ function trht_define_acf_blocks() {
 
 		acf_register_block(
 			array(
+				'name'              => 'number-bar',
+				'title'             => __( 'Number Bar' ),
+				'description'       => __( 'A block displaying a number value and text.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'number', 'value', 'text' ),
+			)
+		);
+
+		acf_register_block(
+			array(
+				'name'              => 'centered-content',
+				'title'             => __( 'Centered Content' ),
+				'description'       => __( 'A block displaying a small content blurb.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'center', 'content' ),
+			)
+		);
+
+		acf_register_block(
+			array(
 				'name'              => 'content-accordion',
 				'title'             => __( 'Content Accordion' ),
 				'description'       => __( 'A block displaying content and an accordion.' ),
