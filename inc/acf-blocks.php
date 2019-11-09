@@ -47,6 +47,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'image', 'content', 'image and content' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'icon-list-content',
+				'title'             => __( 'Icon List and Content' ),
+				'description'       => __( 'A block displaying an icon list and some content.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'list', 'icon', 'content' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );

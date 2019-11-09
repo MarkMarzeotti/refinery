@@ -62,3 +62,15 @@ img {
 		z-index: 100000; /* Above WP toolbar. */
 	}
 }
+
+.responsive-video {
+	padding-bottom: 58%;
+	position: relative;
+	width: 100%;
+
+	iframe {
+		@include position(absolute, 0 0 0 0);
+		height: 100%;
+		width: 100%;
+	}
+}
