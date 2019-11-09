@@ -83,6 +83,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'tabs', 'switch', 'content' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'cta',
+				'title'             => __( 'Call to Action' ),
+				'description'       => __( 'A block displaying an image, text and a button.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'image', 'content', 'cta' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );

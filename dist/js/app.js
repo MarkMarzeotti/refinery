@@ -99,7 +99,7 @@ __webpack_require__(4);
 
 __webpack_require__(5);
 
-__webpack_require__(11);
+__webpack_require__(6);
 
 (function ($) {
 	$(document).ready(function () {});
@@ -261,12 +261,7 @@ __webpack_require__(11);
 })();
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
