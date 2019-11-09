@@ -17,3 +17,16 @@
 		}
 	}
 }
+
+.post {
+
+	&__content {
+		> *:first-child:not(.hero) {
+			margin-top: 40px;
+
+			@include grid-media($medium-screen-grid) {
+				margin-top: 100px;
+			}
+		}
+	}
+}

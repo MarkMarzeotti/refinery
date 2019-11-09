@@ -95,6 +95,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'image', 'content', 'cta' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'content-accordion',
+				'title'             => __( 'Content Accordion' ),
+				'description'       => __( 'A block displaying content and an accordion.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'accordion', 'content', 'dropdown' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );

@@ -1,4 +1,4 @@
-.content-switch {
+.content-accordion {
 	margin-bottom: 20px;
 
 	@include grid-media($medium-screen-grid) {
@@ -6,36 +6,28 @@
 	}
 
 	.container {
+		align-content: flex-start;
 		display: flex;
 		flex-flow: row wrap;
-		max-width: 1100px;
 	}
 
-	&__intro {
+	&__content {
 		@include grid-column(4);
 		margin-bottom: 20px;
 
 		@include grid-media($medium-screen-grid) {
-			@include grid-column(12);
+			@include grid-column(6);
 		}
 	}
 
-	&__tabs {
+	&__accordion {
 		@include grid-column(4);
-		align-self: flex-start;
-		margin-bottom: 18px;
+		margin-bottom: 20px;
 
 		@include grid-media($medium-screen-grid) {
 			@include grid-column(5);
-			margin-bottom: 0;
-		}
-
-		h3 {
-			margin: 0 0 18px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+			@include grid-shift(1);
+			margin-top: 10px;
 		}
 	}
 
@@ -50,6 +42,7 @@
 		font-size: 16px;
 		font-weight: 700;
 		line-height: 1.6;
+		margin-bottom: 18px;
 		outline: none; // controlled by border
 		padding: 13px 30px 13px 13px;
 		position: relative;
@@ -70,33 +63,21 @@
 			float: right;
 			height: 10px;
 			margin: auto 0;
+			transform: rotate(90deg);
 			transition: right 300ms ease;
 			width: 10px;
 		}
 
-		&:hover {
-
-			&::after {
-				right: 8px;
-			}
+		&:last-child {
+			margin-bottom: 0;
 		}
 
-		&[aria-selected=true] {
+		&[aria-expanded=true] {
 			border: 2px solid $color__atlantis;
 		}
 	}
 
 	&__panel {
-		@include grid-column(4);
-		align-self: center;
-		border-radius: 10px;
-		box-shadow: 0px 0px 30px 6px rgba(243, 246, 250, 1);
-		margin-bottom: 40px;
-		padding: 20px 30px 10px;
-
-		@include grid-media($medium-screen-grid) {
-			@include grid-column(7);
-			margin-bottom: 0;
-		}
+		padding: 0 15px 10px;
 	}
 }

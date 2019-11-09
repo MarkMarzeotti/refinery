@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Name: Number Columns
+ * Block Name: Content Switch
  *
  * This is the template that displays the number columns block.
  */
@@ -17,7 +17,7 @@
 			$item_count = 0;
 			?>
 
-			<div class="content-switch__tabs" role="tablist" aria-label="<?php the_field( 'heading' ); ?>">
+			<div class="content-switch__tabs  js-tabs" role="tablist" aria-label="<?php the_field( 'heading' ); ?>">
 
 				<?php
 				while ( have_rows( 'tabs' ) ) :
@@ -27,18 +27,19 @@
 					$tab_id     = sanitize_title( $tab );
 					$content_id = $tab_id . '-content';
 					$selected   = $item_count === 1 ? 'true' : 'false';
-					$tab_index  = $item_count !== 1 ? 'tabindex="-1"' : '';
 					?>
 
-					<button
-						role="tab"
-						aria-selected="<?php echo esc_attr( $selected ); ?>"
-						aria-controls="<?php echo esc_attr( $content_id ); ?>"
-						id="<?php echo esc_attr( $tab_id ); ?>"
-						<?php echo esc_attr( $tab_index ); ?>
-					>
-						<?php the_sub_field( 'tab_content' ); ?>
-					</button>
+					<h3>
+						<button
+							id="<?php echo esc_attr( $tab_id ); ?>"
+							class="content-switch__trigger"
+							role="tab"
+							aria-selected="<?php echo esc_attr( $selected ); ?>"
+							aria-controls="<?php echo esc_attr( $content_id ); ?>"
+						>
+							<?php the_sub_field( 'tab_content' ); ?>
+						</button>
+					</h3>
 
 				<?php endwhile; ?>
 
@@ -56,7 +57,7 @@
 				?>
 
 				<div
-					class="content-switch__content"
+					class="content-switch__panel"
 					tabindex="0"
 					role="tabpanel"
 					id="<?php echo esc_attr( $content_id ); ?>"

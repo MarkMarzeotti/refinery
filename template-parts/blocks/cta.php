@@ -1,8 +1,8 @@
 <?php
 /**
- * Block Name: Image and Content
+ * Block Name: CTA
  *
- * This is the template that displays the image and content block.
+ * This is the template that displays the CTA block.
  */
 
 $button = get_field( 'button' );
