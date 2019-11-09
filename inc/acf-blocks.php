@@ -71,6 +71,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'columns', 'numbered', 'process' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'content-switch',
+				'title'             => __( 'Content Switch' ),
+				'description'       => __( 'A block displaying tabs to switch out content.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'tabs', 'switch', 'content' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );

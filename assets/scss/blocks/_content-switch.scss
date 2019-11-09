@@ -1,0 +1,98 @@
+.content-switch {
+	margin-bottom: 20px;
+
+	@include grid-media($medium-screen-grid) {
+		margin-bottom: 100px;
+	}
+
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		max-width: 1100px;
+	}
+
+	&__intro {
+		@include grid-column(4);
+		margin-bottom: 20px;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(12);
+		}
+	}
+
+	&__tabs {
+		@include grid-column(4);
+		align-self: flex-start;
+		margin-bottom: 18px;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(5);
+			margin-bottom: 0;
+		}
+
+		button {
+			appearance: none;
+			background-color: transparent;
+			border: 2px solid $color__white;
+			border-radius: 10px;
+			box-shadow: 0px 0px 30px 6px rgba(243, 246, 250, 1);
+			cursor: pointer;
+			font-family: $font__encode-sans;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 1.6;
+			margin-bottom: 18px;
+			outline: none; // controlled by border
+			padding: 13px 30px 13px 13px;
+			position: relative;
+			text-align: left;
+			width: 100%;
+
+			@include grid-media($medium-screen-grid) {
+				font-size: 18px;
+			}
+
+			&::after {
+				@include position(absolute, 0 16px 0 null);
+				background-image: url(../../assets/img/arrow-disclosure-right.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+				content: '';
+				display: block;
+				float: right;
+				height: 10px;
+				margin: auto 0;
+				transition: right 300ms ease;
+				width: 10px;
+			}
+
+			&:hover {
+
+				&::after {
+					right: 8px;
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&[aria-selected=true] {
+				border: 2px solid $color__atlantis;
+			}
+		}
+	}
+
+	&__content {
+		@include grid-column(4);
+		align-self: center;
+		border-radius: 10px;
+		box-shadow: 0px 0px 30px 6px rgba(243, 246, 250, 1);
+		margin-bottom: 40px;
+		padding: 20px 30px 10px;
+
+		@include grid-media($medium-screen-grid) {
+			@include grid-column(7);
+		}
+	}
+}
