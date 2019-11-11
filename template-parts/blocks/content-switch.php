@@ -61,7 +61,6 @@
 
 				<div
 					class="content-switch__panel"
-					tabindex="0"
 					role="tabpanel"
 					id="<?php echo esc_attr( $trht_content_id ); ?>"
 					aria-labelledby="<?php echo esc_attr( $trht_tab_id ); ?>"

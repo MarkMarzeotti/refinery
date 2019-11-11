@@ -61,6 +61,7 @@ form {
 
 	button {
 		@extend .btn;
+		cursor: pointer;
 		margin-top: 0;
 		padding: 16px;
 		width: 100%;

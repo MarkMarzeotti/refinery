@@ -44,6 +44,7 @@
 			@include position(relative, auto null auto auto);
 			background-color: transparent;
 			display: flex;
+			overflow: visible;
 			padding: 0;
 			width: auto;
 		}
