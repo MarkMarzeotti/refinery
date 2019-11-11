@@ -168,6 +168,10 @@
 			&::after {
 				content: none !important;
 			}
+
+			&:hover {
+				color: $color__shark;
+			}
 		}
 	}
 }
