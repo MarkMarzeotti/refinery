@@ -3,7 +3,10 @@
  * Block Name: Number Columns
  *
  * This is the template that displays the number columns block.
+ *
+ * @package Refinery
  */
+
 ?>
 
 <section class="number-bar">

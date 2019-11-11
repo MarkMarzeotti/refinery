@@ -3,10 +3,12 @@
  * Block Name: Icon List and Content
  *
  * This is the template that displays the icon list and content block.
+ *
+ * @package Refinery
  */
 
-$button = get_field( 'button' );
-$target = ! empty( $button['target'] ) ? 'target="' . $button['target'] . '"' : '';
+$trht_button = get_field( 'button' );
+$trht_target = ! empty( $trht_button['target'] ) ? 'target="' . $trht_button['target'] . '"' : '';
 ?>
 
 <section class="icon-list-content">
@@ -19,14 +21,14 @@ $target = ! empty( $button['target'] ) ? 'target="' . $button['target'] . '"' : 
 				while ( have_rows( 'icon_list' ) ) :
 					the_row();
 
-					$icon = get_sub_field( 'icon' );
-					$alt  = ! empty( $icon['alt'] ) ? $icon['alt'] : get_sub_field( 'heading' );
+					$trht_icon = get_sub_field( 'icon' );
+					$trht_alt  = ! empty( $trht_icon['alt'] ) ? $trht_icon['alt'] : get_sub_field( 'heading' );
 					?>
 
 					<div class="icon-list-content__item">
 						<div class="icon-list-content__icon">
 
-							<img src="<?php echo esc_url( $icon['sizes']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+							<img src="<?php echo esc_url( $trht_icon['sizes']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $trht_alt ); ?>" />
 
 						</div>
 						<div class="icon-list-content__item-content">
@@ -50,8 +52,8 @@ $target = ! empty( $button['target'] ) ? 'target="' . $button['target'] . '"' : 
 				<iframe src="<?php the_field( 'video' ); ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			</div>
 
-			<?php if ( ! empty( $button ) ) : ?>
-				<a class="btn--arrow" href="<?php echo esc_url( $button['url'] ); ?>" <?php echo esc_attr( $target ); ?>><?php echo esc_html( $button['title'] ); ?></a>
+			<?php if ( ! empty( $trht_button ) ) : ?>
+				<a class="btn--arrow" href="<?php echo esc_url( $trht_button['url'] ); ?>" <?php echo esc_attr( $trht_target ); ?>><?php echo esc_html( $trht_button['title'] ); ?></a>
 			<?php endif; ?>
 		</div>
 	</div>

@@ -27,8 +27,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'hero',
-				'title'             => __( 'Hero' ),
-				'description'       => __( 'A hero block with content and image.' ),
+				'title'             => __( 'Hero', 'refinery-test' ),
+				'description'       => __( 'A hero block with content and image.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -39,8 +39,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'backpage-hero',
-				'title'             => __( 'Backpage Hero' ),
-				'description'       => __( 'A hero block with content and image.' ),
+				'title'             => __( 'Backpage Hero', 'refinery-test' ),
+				'description'       => __( 'A hero block with content and image.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -51,8 +51,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'image-content',
-				'title'             => __( 'Image and Content' ),
-				'description'       => __( 'A block displaying an image and some content.' ),
+				'title'             => __( 'Image and Content', 'refinery-test' ),
+				'description'       => __( 'A block displaying an image and some content.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -63,8 +63,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'icon-list-content',
-				'title'             => __( 'Icon List and Content' ),
-				'description'       => __( 'A block displaying an icon list and some content.' ),
+				'title'             => __( 'Icon List and Content', 'refinery-test' ),
+				'description'       => __( 'A block displaying an icon list and some content.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -75,8 +75,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'number-columns',
-				'title'             => __( 'Number Columns' ),
-				'description'       => __( 'A block displaying numbered columns of content.' ),
+				'title'             => __( 'Number Columns', 'refinery-test' ),
+				'description'       => __( 'A block displaying numbered columns of content.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -87,8 +87,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'content-switch',
-				'title'             => __( 'Content Switch' ),
-				'description'       => __( 'A block displaying tabs to switch out content.' ),
+				'title'             => __( 'Content Switch', 'refinery-test' ),
+				'description'       => __( 'A block displaying tabs to switch out content.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -99,8 +99,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'cta',
-				'title'             => __( 'Call to Action' ),
-				'description'       => __( 'A block displaying an image, text and a button.' ),
+				'title'             => __( 'Call to Action', 'refinery-test' ),
+				'description'       => __( 'A block displaying an image, text and a button.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -111,8 +111,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'number-bar',
-				'title'             => __( 'Number Bar' ),
-				'description'       => __( 'A block displaying a number value and text.' ),
+				'title'             => __( 'Number Bar', 'refinery-test' ),
+				'description'       => __( 'A block displaying a number value and text.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -123,8 +123,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'centered-content',
-				'title'             => __( 'Centered Content' ),
-				'description'       => __( 'A block displaying a small content blurb.' ),
+				'title'             => __( 'Centered Content', 'refinery-test' ),
+				'description'       => __( 'A block displaying a small content blurb.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -135,8 +135,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'content-accordion',
-				'title'             => __( 'Content Accordion' ),
-				'description'       => __( 'A block displaying content and an accordion.' ),
+				'title'             => __( 'Content Accordion', 'refinery-test' ),
+				'description'       => __( 'A block displaying content and an accordion.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',
@@ -147,8 +147,8 @@ function trht_define_acf_blocks() {
 		acf_register_block(
 			array(
 				'name'              => 'content-form',
-				'title'             => __( 'Content Form' ),
-				'description'       => __( 'A block displaying content and a form.' ),
+				'title'             => __( 'Content Form', 'refinery-test' ),
+				'description'       => __( 'A block displaying content and a form.', 'refinery-test' ),
 				'render_callback'   => 'trht_render_acf_blocks',
 				'category'          => 'formatting',
 				'icon'              => 'admin-comments',

@@ -3,7 +3,10 @@
  * Block Name: Centered Content
  *
  * This is the template that displays the centered content block.
+ *
+ * @package Refinery
  */
+
 ?>
 
 <section class="centered-content">

@@ -3,13 +3,15 @@
  * Block Name: Hero
  *
  * This is the template that displays the hero block.
+ *
+ * @package Refinery
  */
 
-$button = get_field( 'button' );
-$target = ! empty( $button['target'] ) ? 'target="' . $button['target'] . '"' : '';
+$trht_button = get_field( 'button' );
+$trht_target = ! empty( $trht_button['target'] ) ? 'target="' . $trht_button['target'] . '"' : '';
 
-$image = get_field( 'image' );
-$alt   = ! empty( $image['alt'] ) ? $image['alt'] : 'hero image';
+$trht_image = get_field( 'image' );
+$trht_alt   = ! empty( $trht_image['alt'] ) ? $trht_image['alt'] : 'hero image';
 ?>
 
 <section class="backpage-hero">
@@ -17,10 +19,10 @@ $alt   = ! empty( $image['alt'] ) ? $image['alt'] : 'hero image';
 		<div class="backpage-hero__content">
 			<h1 class="h6"><?php the_field( 'page_title' ); ?></h1>
 			<p class="h1"><?php the_field( 'heading' ); ?></p>
-			<a class="btn" href="<?php echo esc_url( $button['url'] ); ?>" <?php echo esc_attr( $target ); ?>><?php echo esc_html( $button['title'] ); ?></a>
+			<a class="btn" href="<?php echo esc_url( $trht_button['url'] ); ?>" <?php echo esc_attr( $trht_target ); ?>><?php echo esc_html( $trht_button['title'] ); ?></a>
 		</div>
 		<div class="backpage-hero__image">
-			<img src="<?php echo esc_url( $image['sizes']['hero-image'] ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
+			<img src="<?php echo esc_url( $trht_image['sizes']['hero-image'] ); ?>" alt="<?php echo esc_attr( $trht_alt ); ?>" />
 		</div>
 	</div>
 </section>
