@@ -220,6 +220,29 @@ function trht_fix_select_placeholder( $field ) {
 add_filter( 'acf/prepare_field/type=select', 'trht_fix_select_placeholder' );
 
 /**
+ * Only allow certain blocks that have been styled.
+ *
+ * @param array $allowed_block_types Currently allowed blocks.
+ * @param array $post                The post object.
+ */
+function trht_allowed_block_types( $allowed_block_types, $post ) {
+	return array(
+		'acf/backpage-hero',
+		'acf/centered-content',
+		'acf/content-accordion',
+		'acf/content-form',
+		'acf/content-switch',
+		'acf/cta',
+		'acf/hero',
+		'acf/icon-list-content',
+		'acf/image-content',
+		'acf/number-bar',
+		'acf/number-columns',
+	);
+}
+add_filter( 'allowed_block_types', 'trht_allowed_block_types', 10, 2);
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
