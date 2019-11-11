@@ -1,0 +1,68 @@
+form {
+	width: 100%;
+
+	.acf-hidden {
+		display: none;
+	}
+
+	.af-field {
+		position: relative;
+	}
+
+	.af-label {
+		@extend .screen-reader-text;
+	}
+
+	input,
+	textarea,
+	select {
+		appearance: none;
+		background-color: $color__alabaster;
+		border: 2px solid $color__alabaster;
+		border-radius: 6px;
+		font-family: $font__open-sans;
+		margin-bottom: 20px;
+		outline: none;
+		padding: 16px 14px;
+		transition: border-color 300ms ease;
+		width: 100%;
+
+		&:focus {
+			border: 2px solid $color__atlantis;
+		}
+
+		&::-webkit-input-placeholder {
+			color: $color__gray;
+		}
+
+		&::-moz-placeholder {
+			color: $color__gray;
+		}
+
+		&:-ms-input-placeholder {
+			color: $color__gray;
+		}
+
+		&:-moz-placeholder {
+			color: $color__gray;
+		}
+	}
+
+	select {
+		background-image: url(../../assets/img/arrow-disclosure-down.svg);
+		background-repeat: no-repeat;
+		background-size: 10px 6px;
+		background-position: top 22px right 16px;
+
+		&:invalid {
+			color: $color__gray;
+		}
+	}
+
+	button {
+		@extend .btn;
+		margin-top: 0;
+		padding: 16px;
+		width: 100%;
+	}
+}

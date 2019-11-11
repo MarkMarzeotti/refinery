@@ -146,6 +146,89 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 /**
+ * Dequeue ACF stylesheets on front end.
+ */
+function trht_dequeue_styles() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	wp_deregister_style( 'af-form-style' );
+	wp_deregister_style( 'acf-global' );
+	wp_deregister_style( 'acf-input' );
+	wp_deregister_style( 'acf-pro-input' );
+}
+add_action( 'wp_print_styles', 'trht_dequeue_styles', 100 );
+
+/**
+ * Dequeue color picker stylesheets on front end.
+ */
+function trht_dequeue_color_picker() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	wp_deregister_style( 'wp-color-picker' );
+}
+add_action( 'acf/input/admin_enqueue_scripts', 'trht_dequeue_color_picker', 100 );
+
+/**
+ * Dequeue scripts on front end.
+ */
+function trht_dequeue_script() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	wp_deregister_script( 'jquery-ui-core' );
+	wp_deregister_script( 'jquery-ui-widget' );
+	wp_deregister_script( 'jquery-ui-mouse' );
+	wp_deregister_script( 'jquery-ui-sortable' );
+	wp_deregister_script( 'jquery-ui-resizable' );
+}
+// add_action( 'wp_print_scripts', 'trht_dequeue_script', 100 );
+
+/**
+ * Dequeue ACF dependencies on front end.
+ */
+function trht_update_acf_settings() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	acf_update_setting( 'enqueue_select2', false );
+	acf_update_setting( 'enqueue_datepicker', false );
+	acf_update_setting( 'enqueue_datetimepicker', false );
+}
+add_action( 'acf/init', 'trht_update_acf_settings' );
+
+/**
+ * Remove jQuery Migrate.
+ */
+function trht_remove_jquery_migrate( $scripts ) {
+    if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+        $script = $scripts->registered['jquery'];
+
+        if ( $script->deps ) {
+            $script->deps = array_diff( $script->deps, array(
+                'jquery-migrate'
+            ) );
+        }
+    }
+}
+add_action( 'wp_default_scripts', 'trht_remove_jquery_migrate' );
+
+/**
+ * Set select placeholder text to label text.
+ */
+function trht_fix_select_placeholder( $field ) {
+	$asterisk = $field['required'] ? ' *' : '';
+	$field['placeholder'] = $field['label'] . $asterisk;
+    return $field;
+}
+add_filter('acf/prepare_field/type=select', 'trht_fix_select_placeholder');
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

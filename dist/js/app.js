@@ -104,7 +104,15 @@ __webpack_require__(6);
 __webpack_require__(7);
 
 (function ($) {
-	$(document).ready(function () {});
+	$(document).ready(function () {
+		$('select').each(function () {
+			if ($(this).attr('data-allow_null') === '1') {
+				$(this).prop('required', true);
+				var option = $(this).find('option[value=""]').text().replace('– ', '').replace(' –', '');
+				$(this).find('option[value=""]').text(option);
+			}
+		});
+	});
 })(jQuery);
 
 /***/ }),

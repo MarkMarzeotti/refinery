@@ -143,6 +143,18 @@ function trht_define_acf_blocks() {
 				'keywords'          => array( 'accordion', 'content', 'dropdown' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'              => 'content-form',
+				'title'             => __( 'Content Form' ),
+				'description'       => __( 'A block displaying content and a form.' ),
+				'render_callback'   => 'trht_render_acf_blocks',
+				'category'          => 'formatting',
+				'icon'              => 'admin-comments',
+				'keywords'          => array( 'form', 'content' ),
+			)
+		);
 	}
 }
 add_action( 'acf/init', 'trht_define_acf_blocks' );
