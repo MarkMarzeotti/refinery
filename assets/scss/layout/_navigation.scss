@@ -82,11 +82,35 @@
 			padding: 10px 0;
 			text-decoration: none;
 			text-transform: lowercase;
+			transition: color 300ms ease;
 			width: 100%;
 
 			@include grid-media($medium-screen-grid) {
 				font-size: 14px;
 				padding: 30px 25px;
+			}
+		}
+
+		&:hover,
+		&--is-current {
+
+			a {
+				color: $color__atlantis;
+			}
+		}
+
+		&--is-current {
+
+			a {
+				position: relative;
+
+				&::after {
+					@include position(absolute, null 0 0 0);
+					background-color: $color__atlantis;
+					content: '';
+					height: 4px;
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -139,6 +163,10 @@
 
 			@include grid-media($medium-screen-grid) {
 				margin: 6px 0 0 25px;
+			}
+
+			&::after {
+				content: none !important;
 			}
 		}
 	}
