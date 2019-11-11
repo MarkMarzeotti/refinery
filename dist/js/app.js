@@ -158,12 +158,14 @@ __webpack_require__(7);
 	links = container.getElementsByTagName('a');
 
 	// Each time a menu link is focused or blurred, toggle focus.
-	for (i = 0, len = links.length; i < len; i++) {
-		links[i].addEventListener('focus', toggleFocus, true);
-		links[i].addEventListener('blur', toggleFocus, true);
-		// if ( ! links[i].offsetWidth && ! links[i].offsetHeight && ! links[i].getClientRects().length ) {
-		links[i].tabIndex = -1;
-		// }
+	var nav = document.getElementById('nav-container');
+	var navStyles = window.getComputedStyle(nav);
+	if (navStyles.left === navStyles.width) {
+		for (i = 0, len = links.length; i < len; i++) {
+			links[i].addEventListener('focus', toggleFocus, true);
+			links[i].addEventListener('blur', toggleFocus, true);
+			links[i].tabIndex = -1;
+		}
 	}
 
 	button.onclick = function () {

@@ -50,7 +50,7 @@
 					</span>
 				</button>
 
-				<div class="nav__container">
+				<div id="nav-container" class="nav__container">
 					<?php
 					if ( has_nav_menu( 'primary-menu' ) ) :
 						wp_nav_menu(
