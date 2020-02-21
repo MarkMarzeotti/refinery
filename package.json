@@ -1,5 +1,5 @@
 {
-  "name": "marzeotti-base",
+  "name": "sample-project",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -8,7 +8,7 @@
     "build": "webpack",
     "watch": "webpack --watch"
   },
-  "repository": "git+https://github.com/MarkMarzeotti/marzeotti-base.git",
+  "repository": "git+https://github.com/MarkMarzeotti/sample-project.git",
   "bin": {
     "webpack": "./node_modules/.bin/webpack"
   },

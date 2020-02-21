@@ -4,7 +4,7 @@
  *
  * This is the template that displays the number columns block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 ?>
@@ -17,7 +17,7 @@
 
 		<?php
 		if ( have_rows( 'tabs' ) ) :
-			$trht_item_count = 0;
+			$samp_item_count = 0;
 			?>
 
 			<div class="content-switch__tabs  js-tabs" role="tablist" aria-label="<?php the_field( 'heading' ); ?>">
@@ -25,20 +25,20 @@
 				<?php
 				while ( have_rows( 'tabs' ) ) :
 					the_row();
-					$trht_item_count++;
-					$trht_tab        = get_sub_field( 'tab_content' );
-					$trht_tab_id     = sanitize_title( $trht_tab );
-					$trht_content_id = $trht_tab_id . '-content';
-					$trht_selected   = 1 === $trht_item_count ? 'true' : 'false';
+					$samp_item_count++;
+					$samp_tab        = get_sub_field( 'tab_content' );
+					$samp_tab_id     = sanitize_title( $samp_tab );
+					$samp_content_id = $samp_tab_id . '-content';
+					$samp_selected   = 1 === $samp_item_count ? 'true' : 'false';
 					?>
 
 					<h3>
 						<button
-							id="<?php echo esc_attr( $trht_tab_id ); ?>"
+							id="<?php echo esc_attr( $samp_tab_id ); ?>"
 							class="content-switch__trigger"
 							role="tab"
-							aria-selected="<?php echo esc_attr( $trht_selected ); ?>"
-							aria-controls="<?php echo esc_attr( $trht_content_id ); ?>"
+							aria-selected="<?php echo esc_attr( $samp_selected ); ?>"
+							aria-controls="<?php echo esc_attr( $samp_content_id ); ?>"
 						>
 							<?php the_sub_field( 'tab_content' ); ?>
 						</button>
@@ -49,22 +49,22 @@
 			</div>
 
 			<?php
-			$trht_item_count = 0;
+			$samp_item_count = 0;
 			while ( have_rows( 'tabs' ) ) :
 				the_row();
-				$trht_item_count++;
-				$trht_tab        = get_sub_field( 'tab_content' );
-				$trht_tab_id     = sanitize_title( $trht_tab );
-				$trht_content_id = $trht_tab_id . '-content';
-				$trht_hidden     = 1 !== $trht_item_count ? 'hidden="hidden"' : '';
+				$samp_item_count++;
+				$samp_tab        = get_sub_field( 'tab_content' );
+				$samp_tab_id     = sanitize_title( $samp_tab );
+				$samp_content_id = $samp_tab_id . '-content';
+				$samp_hidden     = 1 !== $samp_item_count ? 'hidden="hidden"' : '';
 				?>
 
 				<div
 					class="content-switch__panel"
 					role="tabpanel"
-					id="<?php echo esc_attr( $trht_content_id ); ?>"
-					aria-labelledby="<?php echo esc_attr( $trht_tab_id ); ?>"
-					<?php echo esc_attr( $trht_hidden ); ?>
+					id="<?php echo esc_attr( $samp_content_id ); ?>"
+					aria-labelledby="<?php echo esc_attr( $samp_tab_id ); ?>"
+					<?php echo esc_attr( $samp_hidden ); ?>
 				>
 					<?php the_sub_field( 'switch_content' ); ?>
 				</div>

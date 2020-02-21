@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 get_header();

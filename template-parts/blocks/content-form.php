@@ -4,13 +4,13 @@
  *
  * This is the template that displays the centered content block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
-$trht_image = get_field( 'image' );
-$trht_alt   = ! empty( $trht_image['alt'] ) ? $trht_image['alt'] : 'hero image';
+$samp_image = get_field( 'image' );
+$samp_alt   = ! empty( $samp_image['alt'] ) ? $samp_image['alt'] : 'hero image';
 
-$trht_form = get_field( 'form' );
+$samp_form = get_field( 'form' );
 ?>
 
 <section class="content-form">
@@ -20,17 +20,17 @@ $trht_form = get_field( 'form' );
 			<div class="content-form__content">
 				<?php the_field( 'content' ); ?>
 			</div>
-			<img src="<?php echo esc_url( $trht_image['sizes']['content-image'] ); ?>" alt="<?php echo esc_attr( $trht_alt ); ?>" />
+			<img src="<?php echo esc_url( $samp_image['sizes']['content-image'] ); ?>" alt="<?php echo esc_attr( $samp_alt ); ?>" />
 
 		</div>
 		<div class="content-form__form">
 
 			<?php
-			$trht_args = array(
+			$samp_args = array(
 				'display_description' => true,
 				'submit_text'         => 'Send',
 			);
-			advanced_form( $trht_form->ID, $trht_args );
+			advanced_form( $samp_form->ID, $samp_args );
 			?>
 
 		</div>

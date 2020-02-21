@@ -4,7 +4,7 @@
  *
  * This is the template that displays the centered content block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 ?>

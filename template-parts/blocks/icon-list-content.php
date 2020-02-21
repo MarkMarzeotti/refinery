@@ -4,11 +4,11 @@
  *
  * This is the template that displays the icon list and content block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
-$trht_button = get_field( 'button' );
-$trht_target = ! empty( $trht_button['target'] ) ? 'target="' . $trht_button['target'] . '"' : '';
+$samp_button = get_field( 'button' );
+$samp_target = ! empty( $samp_button['target'] ) ? 'target="' . $samp_button['target'] . '"' : '';
 ?>
 
 <section class="icon-list-content">
@@ -21,14 +21,14 @@ $trht_target = ! empty( $trht_button['target'] ) ? 'target="' . $trht_button['ta
 				while ( have_rows( 'icon_list' ) ) :
 					the_row();
 
-					$trht_icon = get_sub_field( 'icon' );
-					$trht_alt  = ! empty( $trht_icon['alt'] ) ? $trht_icon['alt'] : get_sub_field( 'heading' );
+					$samp_icon = get_sub_field( 'icon' );
+					$samp_alt  = ! empty( $samp_icon['alt'] ) ? $samp_icon['alt'] : get_sub_field( 'heading' );
 					?>
 
 					<div class="icon-list-content__item">
 						<div class="icon-list-content__icon">
 
-							<img src="<?php echo esc_url( $trht_icon['sizes']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $trht_alt ); ?>" />
+							<img src="<?php echo esc_url( $samp_icon['sizes']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $samp_alt ); ?>" />
 
 						</div>
 						<div class="icon-list-content__item-content">
@@ -52,8 +52,8 @@ $trht_target = ! empty( $trht_button['target'] ) ? 'target="' . $trht_button['ta
 				<iframe src="<?php the_field( 'video' ); ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 			</div>
 
-			<?php if ( ! empty( $trht_button ) ) : ?>
-				<a class="btn--arrow" href="<?php echo esc_url( $trht_button['url'] ); ?>" <?php echo esc_attr( $trht_target ); ?>><?php echo esc_html( $trht_button['title'] ); ?></a>
+			<?php if ( ! empty( $samp_button ) ) : ?>
+				<a class="btn--arrow" href="<?php echo esc_url( $samp_button['url'] ); ?>" <?php echo esc_attr( $samp_target ); ?>><?php echo esc_html( $samp_button['title'] ); ?></a>
 			<?php endif; ?>
 		</div>
 	</div>

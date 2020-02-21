@@ -4,20 +4,20 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
-function trht_setup() {
+function samp_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Marzeotti Base, use a find and replace
-	 * to change 'refinery-test' to the name of your theme in all the template files.
+	 * to change 'sample-project' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'refinery-test', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'sample-project', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head.
@@ -48,9 +48,9 @@ function trht_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'primary-menu' => esc_html__( 'Primary Menu', 'refinery-test' ),
-			'button-menu'  => esc_html__( 'Button Menu', 'refinery-test' ),
-			'footer-menu'  => esc_html__( 'Footer Menu', 'refinery-test' ),
+			'primary-menu' => esc_html__( 'Primary Menu', 'sample-project' ),
+			'button-menu'  => esc_html__( 'Button Menu', 'sample-project' ),
+			'footer-menu'  => esc_html__( 'Footer Menu', 'sample-project' ),
 		)
 	);
 
@@ -61,51 +61,51 @@ function trht_setup() {
 		'editor-color-palette',
 		array(
 			array(
-				'name'  => __( 'Black', 'refinery-test' ),
+				'name'  => __( 'Black', 'sample-project' ),
 				'slug'  => 'black',
 				'color' => '#000000',
 			),
 			array(
-				'name'  => __( 'White', 'refinery-test' ),
+				'name'  => __( 'White', 'sample-project' ),
 				'slug'  => 'white',
 				'color' => '#ffffff',
 			),
 			array(
-				'name'  => __( 'Gallery', 'refinery-test' ),
+				'name'  => __( 'Gallery', 'sample-project' ),
 				'slug'  => 'gallery',
 				'color' => '#eeeeee',
 			),
 		)
 	);
 }
-add_action( 'after_setup_theme', 'trht_setup' );
+add_action( 'after_setup_theme', 'samp_setup' );
 
 /**
  * Enqueue scripts and styles.
  */
-function trht_scripts() {
+function samp_scripts() {
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Encode+Sans:400,600|Montserrat:400,700|Open+Sans:400,700', array(), '1' );
-	wp_enqueue_style( 'trht-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_script( 'trht-script', get_stylesheet_directory_uri() . '/dist/js/app.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_style( 'samp-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_script( 'samp-script', get_stylesheet_directory_uri() . '/dist/js/app.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 	wp_localize_script(
-		'trht-script',
-		'trhtGlobal',
+		'samp-script',
+		'sampGlobal',
 		array(
 			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-			'nonce'   => wp_create_nonce( 'trht_more_post_ajax_nonce' ),
+			'nonce'   => wp_create_nonce( 'samp_more_post_ajax_nonce' ),
 		)
 	);
 }
-add_action( 'wp_enqueue_scripts', 'trht_scripts' );
+add_action( 'wp_enqueue_scripts', 'samp_scripts' );
 
 /**
  * Enqueue admin scripts and styles.
  */
-function trht_admin_scripts() {
+function samp_admin_scripts() {
 	wp_enqueue_style( 'admin-styles', get_stylesheet_directory_uri() . '/dist/css/admin.css', array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_script( 'admin-script', get_stylesheet_directory_uri() . '/dist/js/admin.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 }
-add_action( 'admin_enqueue_scripts', 'trht_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'samp_admin_scripts' );
 
 /**
  * Remove WordPress base menu classes.
@@ -113,30 +113,30 @@ add_action( 'admin_enqueue_scripts', 'trht_admin_scripts' );
  * @param array  $classes An array of classes for this menu item.
  * @param object $item    The post object for the menu item.
  */
-function trht_discard_menu_classes( $classes, $item ) {
+function samp_discard_menu_classes( $classes, $item ) {
 	return (array) get_post_meta( $item->ID, '_menu_item_classes', true );
 }
-add_filter( 'trht_nav_menu_css_class', 'trht_discard_menu_classes', 10, 2 );
+add_filter( 'samp_nav_menu_css_class', 'samp_discard_menu_classes', 10, 2 );
 
 /**
  * Set number of words to show in the excerpt.
  *
  * @param int $length Allowed length of the excerpt.
  */
-function trht_excerpt_length( $length ) {
+function samp_excerpt_length( $length ) {
 	return 30;
 }
-add_filter( 'excerpt_length', 'trht_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'samp_excerpt_length', 999 );
 
 /**
  * Set characters to show after excerpt.
  *
  * @param string $more The text to display at the end of a generated excerpt.
  */
-function trht_excerpt_more( $more ) {
+function samp_excerpt_more( $more ) {
 	return '...';
 }
-add_filter( 'excerpt_more', 'trht_excerpt_more' );
+add_filter( 'excerpt_more', 'samp_excerpt_more' );
 
 /**
  * Create ACF Options page.
@@ -148,7 +148,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 /**
  * Dequeue ACF stylesheets on front end.
  */
-function trht_dequeue_styles() {
+function samp_dequeue_styles() {
 	if ( is_admin() ) {
 		return;
 	}
@@ -158,24 +158,24 @@ function trht_dequeue_styles() {
 	wp_deregister_style( 'acf-input' );
 	wp_deregister_style( 'acf-pro-input' );
 }
-add_action( 'wp_print_styles', 'trht_dequeue_styles', 100 );
+add_action( 'wp_print_styles', 'samp_dequeue_styles', 100 );
 
 /**
  * Dequeue color picker stylesheets on front end.
  */
-function trht_dequeue_color_picker() {
+function samp_dequeue_color_picker() {
 	if ( is_admin() ) {
 		return;
 	}
 
 	wp_deregister_style( 'wp-color-picker' );
 }
-add_action( 'acf/input/admin_enqueue_scripts', 'trht_dequeue_color_picker', 100 );
+add_action( 'acf/input/admin_enqueue_scripts', 'samp_dequeue_color_picker', 100 );
 
 /**
  * Dequeue ACF dependencies on front end.
  */
-function trht_update_acf_settings() {
+function samp_update_acf_settings() {
 	if ( is_admin() ) {
 		return;
 	}
@@ -184,14 +184,14 @@ function trht_update_acf_settings() {
 	acf_update_setting( 'enqueue_datepicker', false );
 	acf_update_setting( 'enqueue_datetimepicker', false );
 }
-add_action( 'acf/init', 'trht_update_acf_settings' );
+add_action( 'acf/init', 'samp_update_acf_settings' );
 
 /**
  * Remove jQuery Migrate.
  *
  * @param object $scripts Enqueued scripts and their dependencies.
  */
-function trht_remove_jquery_migrate( $scripts ) {
+function samp_remove_jquery_migrate( $scripts ) {
 	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
 		$script = $scripts->registered['jquery'];
 
@@ -205,19 +205,19 @@ function trht_remove_jquery_migrate( $scripts ) {
 		}
 	}
 }
-add_action( 'wp_default_scripts', 'trht_remove_jquery_migrate' );
+add_action( 'wp_default_scripts', 'samp_remove_jquery_migrate' );
 
 /**
  * Set select placeholder text to label text.
  *
  * @param array $field An array of values pertaining to this field.
  */
-function trht_fix_select_placeholder( $field ) {
+function samp_fix_select_placeholder( $field ) {
 	$asterisk             = $field['required'] ? ' *' : '';
 	$field['placeholder'] = $field['label'] . $asterisk;
 	return $field;
 }
-add_filter( 'acf/prepare_field/type=select', 'trht_fix_select_placeholder' );
+add_filter( 'acf/prepare_field/type=select', 'samp_fix_select_placeholder' );
 
 /**
  * Only allow certain blocks that have been styled.
@@ -225,7 +225,7 @@ add_filter( 'acf/prepare_field/type=select', 'trht_fix_select_placeholder' );
  * @param array $allowed_block_types Currently allowed blocks.
  * @param array $post                The post object.
  */
-function trht_allowed_block_types( $allowed_block_types, $post ) {
+function samp_allowed_block_types( $allowed_block_types, $post ) {
 	return array(
 		'acf/backpage-hero',
 		'acf/centered-content',
@@ -240,7 +240,7 @@ function trht_allowed_block_types( $allowed_block_types, $post ) {
 		'acf/number-columns',
 	);
 }
-add_filter( 'allowed_block_types', 'trht_allowed_block_types', 10, 2);
+add_filter( 'allowed_block_types', 'samp_allowed_block_types', 10, 2);
 
 /**
  * Custom template tags for this theme.
@@ -255,7 +255,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * A custom walker class to modify the navigation markup.
  */
-require get_template_directory() . '/inc/class-trht-walker-nav-menu.php';
+require get_template_directory() . '/inc/class-samp-walker-nav-menu.php';
 
 /**
  * Advanced Custom Fields Blocks.

@@ -4,13 +4,13 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 /**
  * Prints HTML with meta information for the current post-date/time.
  */
-function trht_posted_on() {
+function samp_posted_on() {
 	$time_string = '<time class="published updated" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf(
@@ -21,7 +21,7 @@ function trht_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'refinery-test' ),
+		esc_html_x( 'Posted on %s', 'post date', 'sample-project' ),
 		$time_string
 	);
 
@@ -36,7 +36,7 @@ function trht_posted_on() {
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Updated on %s', 'post date', 'refinery-test' ),
+			esc_html_x( 'Updated on %s', 'post date', 'sample-project' ),
 			$time_string
 		);
 	}
@@ -48,10 +48,10 @@ function trht_posted_on() {
 /**
  * Prints HTML with meta information for the current author.
  */
-function trht_posted_by() {
+function samp_posted_by() {
 	$byline = sprintf(
 		/* translators: %s: post author. */
-		esc_html_x( 'by %s', 'post author', 'refinery-test' ),
+		esc_html_x( 'by %s', 'post author', 'sample-project' ),
 		'<span class="author"><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

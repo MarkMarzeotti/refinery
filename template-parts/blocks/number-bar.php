@@ -4,7 +4,7 @@
  *
  * This is the template that displays the number columns block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 ?>

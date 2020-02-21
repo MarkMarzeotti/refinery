@@ -4,7 +4,7 @@
  *
  * This is the template that displays the number columns block.
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 ?>
@@ -17,15 +17,15 @@
 
 		<?php
 		if ( have_rows( 'columns' ) ) :
-			$trht_item_count = 0;
+			$samp_item_count = 0;
 
 			while ( have_rows( 'columns' ) ) :
 				the_row();
-				$trht_item_count++;
+				$samp_item_count++;
 				?>
 
 				<div class="number-columns__item">
-					<span class="number-columns__count"><?php echo esc_html( $trht_item_count ); ?></span>
+					<span class="number-columns__count"><?php echo esc_html( $samp_item_count ); ?></span>
 					<?php the_sub_field( 'content' ); ?>
 				</div>
 

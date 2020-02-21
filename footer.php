@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Refinery
+ * @package Sample_Project
  */
 
 ?>
@@ -17,11 +17,11 @@
 		<div class="footer__logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php
-				$trht_logo_id = get_field( 'light_logo', 'option' );
-				if ( ! empty( $trht_logo_id ) ) :
-					$trht_logo = wp_get_attachment_image_src( $trht_logo_id, 'logo' );
+				$samp_logo_id = get_field( 'light_logo', 'option' );
+				if ( ! empty( $samp_logo_id ) ) :
+					$samp_logo = wp_get_attachment_image_src( $samp_logo_id, 'logo' );
 					?>
-					<img src="<?php echo esc_url( $trht_logo[0] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
+					<img src="<?php echo esc_url( $samp_logo[0] ); ?>" alt="<?php bloginfo( 'name' ); ?> logo" />
 					<?php
 				else :
 					bloginfo( 'name' );
@@ -37,12 +37,12 @@
 					<?php
 					while ( have_rows( 'social_media_links', 'option' ) ) :
 						the_row();
-						$trht_social_logo_id = get_sub_field( 'logo' );
-						$trht_social_logo    = wp_get_attachment_image( $trht_social_logo_id, 'social-logo' );
+						$samp_social_logo_id = get_sub_field( 'logo' );
+						$samp_social_logo    = wp_get_attachment_image( $samp_social_logo_id, 'social-logo' );
 						?>
 						<li>
 							<a href="<?php the_sub_field( 'link' ); ?>" target="_blank" rel="noopener">
-								<?php echo wp_kses( $trht_social_logo, 'post' ); ?>
+								<?php echo wp_kses( $samp_social_logo, 'post' ); ?>
 							</a>
 						</li>
 					<?php endwhile; ?>
@@ -61,7 +61,7 @@
 						'menu_id'        => 'footer-menu',
 						'menu_class'     => 'nav__level',
 						'theme_location' => 'footer-menu',
-						'walker'         => new Trht_Walker_Nav_Menu(),
+						'walker'         => new SAMP_Walker_Nav_Menu(),
 						'depth'          => 1,
 					)
 				);
