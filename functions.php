@@ -240,7 +240,7 @@ function samp_allowed_block_types( $allowed_block_types, $post ) {
 		'acf/number-columns',
 	);
 }
-add_filter( 'allowed_block_types', 'samp_allowed_block_types', 10, 2);
+add_filter( 'allowed_block_types', 'samp_allowed_block_types', 10, 2 );
 
 /**
  * Custom template tags for this theme.
